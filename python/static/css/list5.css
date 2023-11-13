@@ -1,0 +1,205 @@
+/* -- --デザイン構築--完成に近い -- */
+
+
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    color: #435757;
+    background: radial-gradient(#fff, #dac4cd);
+    font: 1.4em/1 'Noto Sans', sans-serif;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+input[type="text"] {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #000;
+    border-radius: 5px;
+    width: 100%;
+    /* Apply the same styling as labels */
+    padding: 15px 30px 15px 62px;
+    border: 3px solid #fff;
+    border-radius: 100px;
+    color: #fff;
+    background-color: #6a8494;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    user-select: none;
+    transition: background-color .2s, box-shadow .2s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    /* Modify the border color or style for focus state if desired */
+}
+
+label {
+    display: block;
+    position: relative;
+    margin: 20px;
+    padding: 15px 30px 15px 62px;
+    border: 3px solid #fff;
+    border-radius: 100px;
+    color: #fff;
+    background-color: #6a8494;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color .2s, box-shadow .2s;
+}
+
+label::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    width: 32px;
+    border: 3px solid #fff;
+    border-radius: 100px;
+    transition: background-color .2s;
+}
+
+label {
+    transform: translateX(-40px);
+}
+
+input:checked + label {
+    background-color: #ab576c;
+}
+
+input:checked + label::before {
+    background-color: #fff;
+}
+
+
+button {
+    display: block;
+    position: relative;
+    margin: 20px;
+    padding: 15px 30px 15px 62px;
+    border: 3px solid #fff;
+    border-radius: 100px;
+    color: #fff;
+    background-color: #6a8494;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color .2s, box-shadow .2s;
+
+    transform: translateX(-40px);
+}
+
+
+/* Apply checkbox-like styling to text input fields */
+input[type="text"] + label {
+    display: block;
+    position: relative;
+    margin: 5px 0;
+    padding: 15px 30px 15px 62px;
+    border: 3px solid #fff;
+    border-radius: 100px;
+    color: #fff;
+    background-color: #6a8494;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    user-select: none;
+    transition: background-color .2s, box-shadow .2s;
+
+    transform: translateX(-40px);
+}
+
+/* Add a pseudo-element for text input fields to mimic the checkbox */
+input[type="text"] + label::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    width: 32px;
+    border: 3px solid #fff;
+    border-radius: 100px;
+    transition: background-color .2s;
+}
+
+/* Style the text input fields when they are checked */
+input[type="text"]:checked + label {
+    background-color: #ab576c;
+}
+
+/* Style the pseudo-element of checked text input fields */
+input[type="text"]:checked + label::before {
+    background-color: #fff;
+}
+
+.text-input {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #000;
+    border-radius: 5px;
+    width: 100%;
+    padding: 15px 30px 15px 62px;
+    border: 3px solid #fff;
+    border-radius: 100px;
+    color: #fff;
+    background-color: #6a8494;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    user-select: none;
+    transition: background-color .2s, box-shadow .2s;
+    transform: translateX(-40px);
+}
+
+.text-input:not(:placeholder-shown) {
+    background-color: #ab576c;
+}
+
+
+#chatContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#chatContainer img {
+    max-width: 50%;
+}
+
+.chatBubble {
+    background-color: #F2F2F2;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.chatBubble p {
+    font-size: 16px;
+    margin: 0;
+}
